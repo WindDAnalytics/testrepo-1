@@ -1,8 +1,10 @@
 ***
-######README
-#####Modified by Nithya D , Thomas D , Juan
-### Taken from pages 49-50 of O'Neil and Schutt
-##Assignment 6 Date:6/15
+
+##Modified by Nithya D , Thomas D , Juan
+
+#Taken from pages 49-50 of O'Neil and Schutt
+
+#Assignment 6 Date:6/15
 ***
 ---
 http://www1.nyc.gov/site/finance/taxes/property-rolling-sales-data.page
@@ -12,13 +14,9 @@ setwd("/testrepo/testrepo")
 
 
 ***
-<<<<<<< HEAD
+
  Check the data
-```{r echo = FALSE}
-=======
-## Check the data
 ```{r echo = TRUE}
->>>>>>> 3c75f971e3238bd56eb668a7b606aefe96b26868
 head(man)
 summary(man)
 str(man) # Very handy function!
@@ -83,6 +81,8 @@ dim(man.homes)
 plot(log10(man.homes$gross.sqft),log10(man.homes$sale.price.n))
 summary(man.homes[which(man.homes$sale.price.n<100000),])
 ```
+![](https://github.com/WindDAnalytics/testrepo-1/blob/master/Analysis/NoOutliers_logT_Homes_Sales_ScatterPlot.png)
+![](https://github.com/WindDAnalytics/testrepo-1/blob/master/Analysis/logT_Sales_per_sqft_Scatterplot.png)
 Removed outliers that seem like they weren't actual sales
 ```{r echo = FALSE}
 man.homes$outliers <- (log10(man.homes$sale.price.n) <=5) + 0
