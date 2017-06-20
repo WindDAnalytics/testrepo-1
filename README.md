@@ -48,15 +48,19 @@ hist(sale.price.n)
 detach(man)
 ```
 ***
+Here's some cool Plots:
+![](https://github.com/WindDAnalytics/testrepo-1/blob/master/Analysis/man.sale.price.png) 
+![](https://github.com/WindDAnalytics/testrepo-1/blob/master/Analysis/Orig_ActualSales_Scatterplot.png)
+
+```{r echo = FALSE}
 keep only the actual sales
 man.sale <- man[man$sale.price.n!=0,]
 plot(man.sale$gross.sqft,man.sale$sale.price.n)
 plot(log10(man.sale$gross.sqft),log10(man.sale$sale.price.n))
 for now, let's look at 1-, 2-, and 3-family homes
-***
-title: "Scatter Plot"
-output: html_document
-runtime: shiny
+```
+
+
 
 #Choose a time series:
 ```{r echo = FALSE}
@@ -67,15 +71,16 @@ See a plot:
 renderPlot({plot(get(input$man))})
 ```
 ***
+More Cleaning and Polishing
 ```{r echo = FALSE}
-##More Cleaning and Polishing
+
 man.homes <- man.sale[which(grepl("FAMILY",man.sale$building.class.category)),]
 dim(man.homes)
 plot(log10(man.homes$gross.sqft),log10(man.homes$sale.price.n))
 summary(man.homes[which(man.homes$sale.price.n<100000),])
-
-
-## remove outliers that seem like they weren't actual sales
+```
+Removed outliers that seem like they weren't actual sales
+```{r echo = FALSE}
 man.homes$outliers <- (log10(man.homes$sale.price.n) <=5) + 0
 man.homes <- man.homes[which(man.homes$outliers==0),]
 plot(log10(man.homes$gross.sqft),log10(man.homes$sale.price.n))
