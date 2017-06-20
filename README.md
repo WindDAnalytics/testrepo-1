@@ -23,7 +23,7 @@ setwd("/testrepo/testrepo")
 man <- read.csv("C:/Nithya/MSDS/Term1/6306_Doing_DS/Week6/Live/Download/rollingsales_manhattan.csv",skip=4,header=TRUE)
 ***
 ## Check the data
-```{r echo = FALSE}
+```{r echo = TRUE}
 head(man)
 summary(man)
 str(man) # Very handy function!
