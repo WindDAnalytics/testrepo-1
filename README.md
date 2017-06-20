@@ -12,8 +12,13 @@ setwd("/testrepo/testrepo")
 
 
 ***
+<<<<<<< HEAD
  Check the data
 ```{r echo = FALSE}
+=======
+## Check the data
+```{r echo = TRUE}
+>>>>>>> 3c75f971e3238bd56eb668a7b606aefe96b26868
 head(man)
 summary(man)
 str(man) # Very handy function!
@@ -55,11 +60,10 @@ Here's some cool Plots:
 ```{r echo = FALSE}
 keep only the actual sales
 man.sale <- man[man$sale.price.n!=0,]
-plot(man.sale$gross.sqft,man.sale$sale.price.n)
-plot(log10(man.sale$gross.sqft),log10(man.sale$sale.price.n))
-for now, let's look at 1-, 2-, and 3-family homes
 ```
 
+
+for now, let's look at 1-, 2-, and 3-family homes
 
 
 #Choose a time series:
