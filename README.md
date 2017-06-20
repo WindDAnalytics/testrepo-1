@@ -60,6 +60,7 @@ keep only the actual sales
 man.sale <- man[man$sale.price.n!=0,]
 ```
 for now, let's look at 1-, 2-, and 3-family homes
+![](https://github.com/WindDAnalytics/testrepo-1/blob/master/Analysis/logT_HomesSq_Price_ScatterPlot.png)
 
 ***
 More Cleaning and Polishing
